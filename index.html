@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf8">
+    <title>Bookmarks</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" type="text/css" href="./styles/index.css">
+  </head>
+
+  <body class="p-2">
+
+    <header class="flex mt-2 mb-2">
+
+      <input type="text" id="mainSearchInput" class="rounded-sm pl-1 pr-1 mr-2 text-xs">
+
+      <button
+        class="btn btn-secondary search-btn mr-1"
+        data-actionType="search"
+        id="searchBtn"
+        >Search
+      </button>
+
+      <button
+        class="btn clear-search-btn"
+        data-actionType="clearSearch"
+        id="clearSearchBtn"
+      >Clear
+      </button>
+    </header>
+
+    <section
+      id="mainContainer"
+      class="main-container"
+    >
+    </section>
+
+    <!-- Dialogs -->
+    <section
+      class="dialog create-folder-dialog"
+      id="createFolderDialog"
+    >
+      <label class="block mb-1 text-xs">New Folder Name</label>
+      <input type="text" id="createFolderTitleField" class="mb-2 rounded-sm pl-1 pr-1 text-xs">
+
+      <footer class="flex">
+
+        <button
+          class="btn btn-secondary add-btn mr-1"
+          data-actionType="createFolder"
+          id="createFolderBtn"
+        >Save
+        </button>
+
+        <button
+          class="btn cancel-btn"
+          data-actionType="closeCreateFolderDialog"
+        >Cancel
+        </button>
+      </footer>
+    </section>
+
+    <section
+      class="dialog edit-folder-dialog"
+      id="editFolderDialog"
+    >
+
+      <label class="block mb-1 text-xs">Edit Folder Name</label>
+      <input type="text" id="editFolderTitleField" class="mb-2 rounded-sm pl-1 pr-1 text-xs">
+
+      <footer class="flex">
+
+        <button
+          class="btn btn-secondary add-btn mr-1"
+          data-actionType="changeFolderName"
+          id="changeFolderNameBtn"
+        >Save
+        </button>
+
+        <button
+          class="btn cancel-btn"
+          data-actionType="closeChangeFolderNameDialog"
+        >Cancel
+        </button>
+      </footer>
+    </section>
+
+    <section
+      class="dialog edit-bookmark-dialog"
+      id="editBookmarkDialog"
+    >
+
+      <label class="block mb-1 text-xs">Bookmark Name</label>
+      <input type="text" id="editBookmarkNameField" class="mb-2 rounded-sm pl-1 pr-1 text-xs">
+
+      <label class="block mb-1 text-xs">Bookmark URL</label>
+      <input type="text" id="editBookmarkUrlField" class="mb-2 rounded-sm pl-1 pr-1 text-xs">
+
+      <footer class="flex">
+
+        <button
+          class="btn btn-secondary save-btn mr-1"
+          data-actionType="editBookmark"
+          id="editBookmarkBtn"
+        >Save
+        </button>
+
+        <button
+          class="btn cancel-btn"
+          data-actionType="closeEditBookmarkDialog"
+        >Cancel
+        </button>
+      </footer>
+    </section>
+
+    <div class="dialog-blur-overlay"></div>
+    <!-- END of Dialogs -->
+
+  </body>
+  <script type="text/javascript" src="./scripts/index.js"></script>
+</html>
